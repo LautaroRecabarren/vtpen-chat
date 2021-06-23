@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>NexChat</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      input{
+        outline: none;
+      }
+      button{
+      outline: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="h-screen w-screen" id="app">
+<!--hitorychat-->
+      <div id="myDiv" class="bg-gray-200 h-5/6 w-full overflow-y-auto" v-if="joined">
+        <ul>
+          <li v-for="message in messages">
+            <div class="border-gray-300 border-b py-10 px-14">
+              <div class="flex">
+                <h1 class="text-gray-600 w-5/6 text-4xl font-semibold">{{ message.username }}:</h1>
+                  <h6 class="text-gray-400 w-1/6 pl-16 xl:pl-44 text-3xl">{{ message.time }}</h6>
+              </div>
+                <p id="message" class="text-gray-700 text-4xl w-auto">{{ message.message }}</p>
+            </div>
+              </li>
+        </ul>
+      </div>
+<!-- chatbox-->
+      <div v-if="joined" class="bg-gray-200 h-1/6 w-full flex border-gray-300 border-t flex flex-row">
+        <h1 id="CurrentUser" class="w-2/6 xl:w-1/6 text-4xl pl-16 self-center font-semibold" style="color: #4a2fe0;">{{this.username}}</h1>
+        <input class="bg-gray-200 w-4/6 xl:w-5/6 text-4xl" id="btn-input" type="text" name="message" placeholder="say something..." v-model="newMessage" @keyup.enter="sendMessage">
+        <span class="flex justify-center bg-gray-200 h-full w-2/6 xl:w-1/6">
+            <box-icon name='send' type='solid' color='#4a2fe0' size='cssSize' class="w-1/3 h-1/3 self-center" @click="sendMessage"></box-icon>
+        </span>
+      </div>
+<!-- not joined -->
+      <div class="flex w-screen h-screen bg-gradient-to-tl from-gray-300 via-gray-200 to-gray-100" v-else>
+        <div class="w-1/3 h-full"></div>
+        <div class="pl-0 xl:pl-32 flex flex-col">
+          <div class="h-1/3 mb-24"></div>
+          <input class="mt-5 h-16 w-96 text-3xl" type="text" class="form-control" placeholder="Set username 12char max" v-model="username" @keyup.enter="joinChat">
+          <button @click="joinChat" class=" w-96 h-16 text-3xl px-4 mt-16 font-semibold rounded-lg shadow-md text-white bg-red-600 hover:bg-red-800">Enter</button>
+        </div>
+        <div class="w-1/3 h-full"></div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="//js.pusher.com/4.0/pusher.min.js"></script>
+    <script src="./app.js"></script>
+    <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+  </body>
+</html>

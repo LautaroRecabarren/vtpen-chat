@@ -4,6 +4,8 @@ const pusher = new Pusher('d28760b60173a3e99d03', {
     authEndpoint: 'pusher/auth'
 });
 
+//tring to start an auto-scroll func
+
 const app = new Vue({
     el: '#app',
     data: {

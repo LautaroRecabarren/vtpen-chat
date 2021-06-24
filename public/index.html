@@ -16,8 +16,8 @@
   <body>
     <div class="h-screen w-screen" id="app">
 <!--hitorychat-->
-      <div id="myDiv" class="bg-gray-200 h-5/6 w-full overflow-y-auto" v-if="joined">
-        <ul>
+      <div class="bg-gray-200 h-5/6 w-full" v-if="joined">
+        <ul class="overflow-auto h-full" v-chat-scroll>
           <li v-for="message in messages">
             <div class="border-gray-300 border-b py-10 px-14">
               <div class="flex">
@@ -53,5 +53,6 @@
     <script src="//js.pusher.com/4.0/pusher.min.js"></script>
     <script src="./app.js"></script>
     <script src="https://unpkg.com/boxicons@latest/dist/boxicons.js"></script>
+    <script src="https://unpkg.com/vue-chat-scroll@alpha/dist/vue-chat-scroll.js"></script>
   </body>
 </html>

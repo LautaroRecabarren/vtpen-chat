@@ -6,6 +6,7 @@
     const session    = require('express-session');
     const Pusher     = require('pusher');
     const VueChatScroll = require ('vue-chat-scroll');
+    const tailwindcss = require('tailwindcss');
 
     const app = express();
 

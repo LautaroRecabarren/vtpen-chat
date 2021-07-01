@@ -15,6 +15,12 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "pusher": "^5.0.0",
+    "tailwind": "^4.0.0",
     "vue-chat-scroll": "^2.0.0-alpha.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4"
   }
 }

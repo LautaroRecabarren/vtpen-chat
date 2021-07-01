@@ -1,3 +1,5 @@
+
+
 const pusher = new Pusher('d28760b60173a3e99d03', {
     cluster: 'us2',
     encrypted: true,
@@ -13,7 +15,8 @@ const app = new Vue({
         newMessage: '',
         messages: [],
         time: '',
-        status: ''
+        status: '',
+        styleObject: '',
     },
     methods: {
         joinChat() {

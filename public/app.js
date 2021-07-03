@@ -1,5 +1,3 @@
-
-
 const pusher = new Pusher('d28760b60173a3e99d03', {
     cluster: 'us2',
     encrypted: true,
@@ -9,6 +7,7 @@ const pusher = new Pusher('d28760b60173a3e99d03', {
 const app = new Vue({
     el: '#app',
     data: {
+        theme: false,
         joined: false,
         username: '',
         members: '',
@@ -16,7 +15,6 @@ const app = new Vue({
         messages: [],
         time: '',
         status: '',
-        styleObject: '',
     },
     methods: {
         joinChat() {

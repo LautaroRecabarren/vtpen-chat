@@ -7,13 +7,14 @@ const pusher = new Pusher('d28760b60173a3e99d03', {
 const app = new Vue({
     el: '#app',
     data: {
+        theme: false,
         joined: false,
         username: '',
         members: '',
         newMessage: '',
         messages: [],
         time: '',
-        status: ''
+        status: '',
     },
     methods: {
         joinChat() {
@@ -57,3 +58,4 @@ const app = new Vue({
     }
 });
 
+//tring to create an auto-scroll func

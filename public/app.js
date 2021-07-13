@@ -27,15 +27,15 @@ const app = new Vue({
                         this.members = channel.members;
                     });
                     // Listen for chat messages
-                    this.listen();
+                    this.listen()
                 });
         },
         sendMessage() {
-            var today = new Date();
-            var h = today.getHours();
-            var mi = today.getMinutes();
-            var time = (h < 10 ? '0' + h : h) + ':' + (mi < 10 ? '0' + mi : mi);
-            var Time = time.toString();
+            let today = new Date();
+            let h = today.getHours();
+            let mi = today.getMinutes();
+            let time = (h < 10 ? '0' + h : h) + ':' + (mi < 10 ? '0' + mi : mi);
+            let Time = time.toString();
             let message = {
                 username: this.username,
                 time: Time,
@@ -43,7 +43,7 @@ const app = new Vue({
             }
             // Clear input field
             this.newMessage = '';
-            axios.post('/send-message', message);
+            axios.post('/send-message', message)
         },
         listen() {
             const channel = pusher.subscribe('Chat');
@@ -53,9 +53,9 @@ const app = new Vue({
                     time: data.time,
                     message: data.message
                 });
+            let box = document.getElementById("historyChat");
+            box.scrollTop = box.scrollHeight;
             });
-        }
+        },
     }
 });
-
-//tring to create an auto-scroll func

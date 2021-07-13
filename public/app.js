@@ -17,6 +17,12 @@ const app = new Vue({
         status: '',
     },
     methods: {
+        scrollToBottom() {
+            let chatBox = document.getElementById("historyChat");
+            setTimeout(() => {
+                chatBox.scrollTop = chatBox.scrollHeight;
+            }, 100);
+        },
         joinChat() {
             axios.post('join-chat', {username: this.username})
                 .then(response => {
@@ -53,8 +59,9 @@ const app = new Vue({
                     time: data.time,
                     message: data.message
                 });
-            let box = document.getElementById("historyChat");
-            box.scrollTop = box.scrollHeight;
+
+            this.scrollToBottom();
+
             });
         },
     }

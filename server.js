@@ -1,11 +1,9 @@
 // server.js
-    require('dotenv').config();
     const express    = require('express');
     const path       = require('path');
     const bodyParser = require('body-parser');
     const session    = require('express-session');
     const Pusher     = require('pusher');
-    const VueChatScroll = require ('vue-chat-scroll');
     const tailwindcss = require('tailwindcss');
 
     const app = express();
@@ -33,7 +31,7 @@
         useTLS: true
     });
 
-    app.listen(3000, () => {
+    app.listen(process.env.PORT || 3000, () => {
         console.log('Server is up on 3000')
     });
 

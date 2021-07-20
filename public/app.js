@@ -21,7 +21,7 @@ const app = new Vue({
             let chatBox = document.getElementById("historyChat");
             setTimeout(() => {
                 chatBox.scrollTop = chatBox.scrollHeight;
-            }, 100);
+            }, 10);
         },
         joinChat() {
             axios.post('join-chat', {username: this.username})

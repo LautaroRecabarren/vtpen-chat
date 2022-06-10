@@ -1,4 +1,3 @@
 # nexchat
-realtime chat by katdevelopments
+realtime chat by Lautaro Pace
 node server.js to run with pusher channels API
-love you babe

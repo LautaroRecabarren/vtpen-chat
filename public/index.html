@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>XampleChat</title>
+    <title>vtpen-chat</title>
     <link href="compiled.css" rel="stylesheet">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <style>
@@ -52,13 +52,13 @@
               id="btn-input" type="text" name="message" placeholder="say something" v-model="newMessage"@keyup.enter="sendMessage">
           <button class="flex justify-center bg-white dark:bg-gray-700 h-full w-1/6" @click="sendMessage">
               <h1 style="color:#7148E5" class="self-center pt-2 pl-2 font-bold
-                text-3xl md:text-2xl lg:text-sm xl:text-md" >Send</h1>
+                text-3xl md:text-2xl lg:text-sm xl:text-md">Send</h1>
           </button>
       </div>
 <!-- not joined -->
       <div class="flex w-screen h-screen bg-gray-200 dark:bg-gray-800 items-center justify-center" v-else>
         <div class="w-1/3 pl-0 flex flex-col items-center justify-center">
-          <h2 class="p-10 font-bold text-6xl md:text-5xl lg:text-4xl" style="color: #7148E5;" >XampleChat</h2>
+          <h2 class="p-10 font-bold text-6xl md:text-5xl lg:text-4xl" style="color: #7148E5;" >vtpen-chat</h2>
           <input class="mt-5 h-20 w-96 rounded-lg text-4xl md:text-3xl lg:text-sm lg:w-72 lg:h-10 xl:text-md"
             type="text" class="form-control" placeholder="Set username" v-model="username" @keyup.enter="joinChat">
           <button @click="joinChat"
